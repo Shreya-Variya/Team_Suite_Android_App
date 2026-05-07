@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="3dp"
+    app:strokeColor="#E0E0E0"
+    app:strokeWidth="1dp"
+    android:layout_margin="14dp"
+    android:backgroundTint="@color/card_default_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topSection"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="wrap_content"
+            android:background="@color/card_top_section"
+            android:padding="@dimen/card_top_padding"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/txtEmployeeName"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/employee_name"
+                android:textSize="@dimen/card_title_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/txtJobRole"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:text="@string/android_developer"
+                android:textSize="@dimen/card_title_small"
+                android:textColor="@color/card_gray_color"
+                app:layout_constraintStart_toStartOf="@id/txtEmployeeName"
+                app:layout_constraintTop_toBottomOf="@id/txtEmployeeName"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="@dimen/divider_height_2"
+            app:layout_constraintTop_toBottomOf="@id/topSection"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomSection"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="wrap_content"
+            android:background="@color/card_bottom_section"
+            android:padding="@dimen/card_bottom_padding"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/labelDepartment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/department"
+                style="@style/empLabel"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/txtDepartment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/empValue"
+                android:text="@string/it"
+                app:layout_constraintTop_toBottomOf="@id/labelDepartment"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/labelExp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/experience"
+                style="@style/empLabel"
+                app:layout_constraintTop_toBottomOf="@id/txtDepartment"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/txtExp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/empValue"
+                android:text="@string/_2_years"
+                app:layout_constraintTop_toBottomOf="@id/labelExp"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/labelEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                style="@style/empLabel"
+                app:layout_constraintTop_toBottomOf="@id/txtExp"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/txtEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/empValue"
+                android:text="@string/demo_gmail"
+                app:layout_constraintTop_toBottomOf="@id/labelEmail"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/labelMobileNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mobile_no"
+                style="@style/empLabel"
+                app:layout_constraintTop_toBottomOf="@id/txtEmail"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/txtMobileNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/empValue"
+                android:text="@string/demo_no"
+                app:layout_constraintTop_toBottomOf="@id/labelMobileNo"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

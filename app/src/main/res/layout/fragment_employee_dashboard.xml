@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.employee.EmployeeDashboardFragment">
+
+    <ScrollView
+        android:id="@+id/scrollEmployeeDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:id="@+id/layoutEmployeeDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/profileSection"
+                layout="@layout/dashboard_profile_section"/>
+
+            <include
+                android:id="@+id/timeTracking"
+                layout="@layout/dashboard_time_tracking"/>
+
+            <include
+                android:id="@+id/calender"
+                layout="@layout/dashboard_calender"/>
+
+            <include
+                android:id="@+id/employeestats"
+                layout="@layout/dashboard_employee_stats"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

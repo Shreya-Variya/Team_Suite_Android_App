@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/dashboardEmployee"
+            android:title="@string/dashboard"
+            app:showAsAction="withText"
+            android:icon="@drawable/ic_dashboard"/>
+        <item android:id="@+id/profileEmployee"
+            android:title="@string/profile"
+            app:showAsAction="withText"
+            android:icon="@drawable/ic_profile"/>
+        <item android:id="@+id/employeeEmployee"
+            android:title="@string/employee"
+            app:showAsAction="withText"
+            android:icon="@drawable/ic_employee"/>
+        <item android:id="@+id/attendanceEmployee"
+            android:title="@string/attendance"
+            app:showAsAction="withText"
+            android:icon="@drawable/ic_attendance"/>
+        <item android:id="@+id/leaveEmployee"
+            android:title="@string/leave"
+            app:showAsAction="withText"
+            android:icon="@drawable/ic_leave"/>
+        <item android:id="@+id/logout"
+            android:title="@string/logout"
+            app:showAsAction="withText"
+            android:icon="@drawable/ic_logout"/>
+    </group>
+</menu>

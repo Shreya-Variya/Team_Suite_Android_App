@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.admin.AdminAttendanceFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/attendance_layout_padding">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardEmployeeAttendance"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardCornerRadius="@dimen/attendance_card_radius"
+            app:cardElevation="@dimen/attendance_card_elevation"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/common_padding">
+
+                <!-- Title -->
+                <TextView
+                    android:id="@+id/txtCardTitle"
+                    android:layout_width="@dimen/no_width"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view_employee_attendance"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/attendance_nav_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/imgArrow"/>
+
+                <!-- Subtitle -->
+                <TextView
+                    android:id="@+id/txtCardSub"
+                    android:layout_width="@dimen/no_width"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_detailed_employee_attendance_report"
+                    android:textSize="@dimen/attendance_nav_subtext"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    app:layout_constraintTop_toBottomOf="@id/txtCardTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/imgArrow"/>
+
+                <!-- Arrow Icon -->
+                <ImageView
+                    android:id="@+id/imgArrow"
+                    android:layout_width="@dimen/nav_arrow_size"
+                    android:layout_height="@dimen/nav_arrow_size"
+                    android:src="@drawable/ic_arrow_forward"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:ignore="ContentDescription" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/txtAttendanceTitle"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="wrap_content"
+            android:text="@string/your_attendance_report"
+            android:textStyle="bold"
+            android:textSize="@dimen/attendance_header_txt"
+            android:gravity="center"
+            android:textColor="?attr/colorOnBackground"
+            app:layout_constraintTop_toBottomOf="@id/cardEmployeeAttendance"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/common_margin"
+            android:layout_marginBottom="@dimen/common_margin"/>
+
+        <TextView
+            android:id="@+id/txtHeaderDate"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin"
+            android:gravity="center"
+            android:text="@string/date"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/txtAttendanceTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtHeaderStatus"
+            app:layout_constraintHorizontal_weight="1.1"/>
+
+        <TextView
+            android:id="@+id/txtHeaderStatus"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin"
+            android:gravity="center"
+            android:text="@string/status"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/txtAttendanceTitle"
+            app:layout_constraintStart_toEndOf="@+id/txtHeaderDate"
+            app:layout_constraintEnd_toStartOf="@+id/txtHeaderWork"
+            app:layout_constraintHorizontal_weight="1"/>
+
+        <TextView
+            android:id="@+id/txtHeaderWork"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin"
+            android:gravity="center"
+            android:text="@string/work"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/txtAttendanceTitle"
+            app:layout_constraintStart_toEndOf="@+id/txtHeaderStatus"
+            app:layout_constraintEnd_toStartOf="@+id/txtHeaderBreak"
+            app:layout_constraintHorizontal_weight="1"/>
+
+        <TextView
+            android:id="@+id/txtHeaderBreak"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin"
+            android:gravity="center"
+            android:text="@string/_break"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/txtAttendanceTitle"
+            app:layout_constraintStart_toEndOf="@+id/txtHeaderWork"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="@dimen/divider_height"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/txtHeaderDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/attendance_margin_top"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerAttendance"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/attendance_margin_top"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

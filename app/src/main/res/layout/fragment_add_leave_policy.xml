@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.admin.AddLeavePolicyFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/add_employee_background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/add_emp_screen_padding">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_leave_policy"
+                android:textSize="@dimen/add_emp_title"
+                android:textStyle="bold"
+                android:textColor="@color/title_add_emp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <!-- Leave Type -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/leaveTypeLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/leave_type"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/et_top_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLeaveType"
+                    android:inputType="text"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Max leave per year -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/maxLeaveLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/max_leave_per_year"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/leaveTypeLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/all_et_top_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMaxLeave"
+                    android:inputType="number"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Max consecutive leave -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/consecutiveLeaveLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/max_consecutive_leave"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/maxLeaveLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/all_et_top_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etConsecutive"
+                    android:inputType="number"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Add Leave Policy Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddLeavePolicy"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="@dimen/add_emp_btn_height"
+                android:text="@string/add_leave_policy"
+                android:textAllCaps="false"
+                android:textSize="@dimen/common_text_size"
+                android:backgroundTint="@color/add_emp_btn"
+                android:textColor="@android:color/white"
+                app:cornerRadius="@dimen/card_radius"
+                app:layout_constraintTop_toBottomOf="@id/consecutiveLeaveLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/add_emp_top_margin"
+                android:layout_marginBottom="@dimen/add_emp_bottom_margin"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

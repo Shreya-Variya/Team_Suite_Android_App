@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.employee.EmployeeLeaveFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtLeaveTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:backgroundTint="@color/employee_title"
+            android:elevation="@dimen/employee_title_elevation"
+            android:padding="@dimen/employee_title_padding"
+            android:text="@string/your_leave_report"
+            android:textColor="@color/black"
+            android:textSize="@dimen/employee_title_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <!-- FILTER SECTION -->
+        <HorizontalScrollView
+            android:id="@+id/filterScroll"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtLeaveTitle">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupFilters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipSpacing="8dp"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAll"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="@string/all" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipMonth"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="@string/this_month" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipApproved"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="@string/approved" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPending"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="@string/pending" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipRejected"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="@string/rejected" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLeaveReport"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="@dimen/no_height"
+            android:clipToPadding="false"
+            android:padding="@dimen/rv_padding"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/btnApplyLeave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filterScroll" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnApplyLeave"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="@dimen/add_emp_btn_height"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:layout_marginTop="@dimen/add_emp_top_margin"
+            android:layout_marginRight="@dimen/common_margin"
+            android:layout_marginBottom="@dimen/common_margin"
+            android:backgroundTint="@color/add_emp_btn"
+            android:text="@string/apply_for_leave"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/common_text_size"
+            app:cornerRadius="@dimen/card_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.973" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

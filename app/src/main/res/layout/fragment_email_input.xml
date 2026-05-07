@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.forgotpassword.EmailInputFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/back_btn_size"
+            android:layout_height="@dimen/back_btn_size"
+            android:backgroundTint="@color/back_btn"
+            android:layout_marginTop="@dimen/min_margin"
+            android:layout_marginStart="@dimen/min_margin"
+            app:icon="@drawable/ic_arrow_back"
+            app:iconSize="@dimen/back_btn_icon_size"
+            app:iconTint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtEmail"
+            android:layout_width="@dimen/nowidth"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/et_margin"
+            android:layout_marginTop="208dp"
+            android:layout_marginRight="@dimen/et_margin"
+            android:padding="@dimen/btn_padding"
+            android:text="@string/email"
+            android:textSize="@dimen/login_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.551"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etLayoutEmail"
+            android:layout_width="@dimen/nowidth"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/et_margin"
+            android:layout_marginRight="@dimen/et_margin"
+            android:textSize="@dimen/login_text_size"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+            app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+            app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+            app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+            app:boxStrokeColor="@color/et_border"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEmail"
+            app:startIconDrawable="@drawable/ic_email"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:hint="@string/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sendOtpBtn"
+            android:layout_width="@dimen/nowidth"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/et_margin"
+            android:layout_marginRight="@dimen/et_margin"
+            android:backgroundTint="@color/send_otp_btn"
+            android:elevation="@dimen/elevation"
+            android:padding="@dimen/btn_padding"
+            android:text="@string/send_otp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_text_size"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/et_border_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.551"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etLayoutEmail"
+            app:layout_constraintVertical_bias="0.094"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

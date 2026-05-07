@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.admin.LeavePolicyFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtLeavePolicyTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:backgroundTint="@color/employee_title"
+            android:elevation="@dimen/employee_title_elevation"
+            android:padding="@dimen/employee_title_padding"
+            android:text="@string/company_leave_policies"
+            android:textColor="@color/black"
+            android:textSize="@dimen/employee_title_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLeavePolicy"
+            android:layout_width="@dimen/no_width"
+            android:layout_height="@dimen/no_height"
+            android:clipToPadding="false"
+            android:padding="@dimen/rv_padding"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtLeavePolicyTitle" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnAddLeavePolicy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/add_emp_margin"
+            android:contentDescription="@string/add_leave_policy"
+            android:src="@drawable/ic_add"
+            app:tint="@color/white"
+            android:backgroundTint="@color/add_employee_btn"
+            app:rippleColor="@color/btn_shadow"
+            app:elevation="@dimen/add_emp_elevation"
+            app:pressedTranslationZ="@dimen/shadow_depth"
+            app:layout_anchorGravity="bottom|end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints,UnknownId" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

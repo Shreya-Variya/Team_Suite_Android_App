@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.admin.EditEmployeeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/add_employee_background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/add_emp_screen_padding">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/update_employee_data"
+                android:textSize="@dimen/add_emp_title"
+                android:textStyle="bold"
+                android:textColor="@color/title_add_emp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <!-- Employee ID -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/empIdLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/employee_id"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/et_top_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmpId"
+                    android:inputType="text"
+                    android:enabled="false"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Employee Name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/employee_name"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/empIdLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/all_et_top_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etName"
+                    android:inputType="textPersonName"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- DOB -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dobLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/date_of_birth"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_attendance"
+                app:layout_constraintTop_toBottomOf="@id/nameLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/all_et_top_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDob"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:enabled="false"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Gender -->
+            <TextView
+                android:id="@+id/genderLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gender"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/dobLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/common_margin"
+                android:layout_marginStart="@dimen/less_margin"/>
+
+            <RadioGroup
+                android:id="@+id/genderGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/genderLabel"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <RadioButton
+                    android:id="@+id/radioMale"
+                    android:text="@string/male"
+                    android:enabled="false"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+
+                <RadioButton
+                    android:id="@+id/radioFemale"
+                    android:text="@string/female"
+                    android:enabled="false"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+
+            </RadioGroup>
+
+            <!-- Marital Status -->
+            <CheckBox
+                android:id="@+id/checkMarried"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/married"
+                android:textSize="@dimen/common_text_size"
+                app:layout_constraintTop_toBottomOf="@id/genderGroup"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Email -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/checkMarried"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:inputType="textEmailAddress"
+                    android:enabled="false"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Mobile -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mobileLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/mobile_number"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/emailLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/all_et_top_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMobile"
+                    android:inputType="phone"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Address -->
+            <TextView
+                android:id="@+id/addressLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textStyle="bold"
+                android:textSize="@dimen/common_text_size"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/mobileLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/common_margin"
+                android:layout_marginStart="@dimen/less_margin"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/streetLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/street"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/addressLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/all_et_top_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etStreet"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cityLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/city"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/streetLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/all_et_top_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCity"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/stateLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/state"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/cityLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/all_et_top_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etState"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Education -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/educationLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/education"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/stateLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/all_et_top_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEducation"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Experience -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/expLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/experience_years"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/educationLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/all_et_top_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etExperience"
+                    android:inputType="numberDecimal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Department -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/deptLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/department"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:endIconMode="dropdown_menu"
+                app:layout_constraintTop_toBottomOf="@id/expLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/all_et_top_margin">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/etDepartment"
+                    android:inputType="none"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/autocompletetextViewpadding"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/common_text_size"
+                    android:background="@null"
+                    tools:ignore="LabelFor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Job Role -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/jobLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/job_role"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:endIconMode="dropdown_menu"
+                app:layout_constraintTop_toBottomOf="@id/deptLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/all_et_top_margin">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/etJobRole"
+                    android:inputType="none"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/autocompletetextViewpadding"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/common_text_size"
+                    android:background="@null"
+                    tools:ignore="LabelFor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Join Date -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/joinLayout"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/join_date"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusBottomStart="@dimen/et_border_radius"
+                app:boxCornerRadiusTopEnd="@dimen/et_border_radius"
+                app:boxCornerRadiusTopStart="@dimen/et_border_radius"
+                app:boxStrokeColor="@color/et_border"
+                app:hintTextAppearance="@style/BigBoldTextInputLabel"
+                app:hintTextColor="@color/black"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_attendance"
+                app:layout_constraintTop_toBottomOf="@id/jobLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/all_et_top_margin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etJoinDate"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:enabled="false"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Add Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUpdateEmployee"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="@dimen/add_emp_btn_height"
+                android:text="@string/update_employee"
+                android:textAllCaps="false"
+                android:textSize="@dimen/common_text_size"
+                android:backgroundTint="@color/add_emp_btn"
+                android:textColor="@android:color/white"
+                app:cornerRadius="@dimen/card_radius"
+                app:layout_constraintTop_toBottomOf="@id/joinLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/add_emp_top_margin"
+                android:layout_marginBottom="@dimen/add_emp_bottom_margin"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

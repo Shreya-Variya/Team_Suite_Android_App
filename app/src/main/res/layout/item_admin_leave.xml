@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/common_margin">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/no_width"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/leave_card_radius"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/grey"
+        app:cardBackgroundColor="@color/card_default_color"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/common_padding">
+
+            <TextView
+                android:id="@+id/txtEmployeeName"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:text="@string/shreya_variya"
+                android:textSize="@dimen/leave_card_title"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/statusChip" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/statusChip"
+                style="@style/Widget.Material3.Chip.Assist"
+                app:chipBackgroundColor="@color/blue"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/demo_leave_status"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/txtLeavePolicy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/leave_margin"
+                android:text="@string/demo_leave_policy"
+                android:textSize="@dimen/leave_type_txt"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/txtEmployeeName"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/txtStartDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin"
+                android:text="@string/start_date"
+                android:textSize="@dimen/card_title_small"
+                android:textColor="@color/grey"
+                app:layout_constraintTop_toBottomOf="@id/txtLeavePolicy"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/txtStartDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/demo_start_date"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/txtStartDateLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/txtEndDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/leave_card_margin_start"
+                android:text="@string/end_date"
+                android:textSize="@dimen/card_title_small"
+                android:textColor="@color/grey"
+                android:layout_marginTop="@dimen/common_margin"
+                app:layout_constraintTop_toBottomOf="@id/txtLeavePolicy"
+                app:layout_constraintStart_toStartOf="@id/guidelineMiddle" />
+
+            <TextView
+                android:id="@+id/txtEndDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/leave_card_margin_start"
+                android:text="@string/demo_end_date"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/txtEndDateLabel"
+                app:layout_constraintStart_toStartOf="@id/guidelineMiddle" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineMiddle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAccept"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/leave_card_btn_margin"
+                android:backgroundTint="@color/green"
+                android:text="@string/accept"
+                android:visibility="gone"
+                app:cornerRadius="@dimen/leave_btn_radius"
+                app:layout_constraintTop_toBottomOf="@id/txtStartDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnReject"
+                app:layout_constraintHorizontal_weight="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReject"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/leave_card_margin_start"
+                android:backgroundTint="@color/red"
+                android:text="@string/reject"
+                android:visibility="gone"
+                app:cornerRadius="@dimen/leave_btn_radius"
+                app:layout_constraintTop_toTopOf="@id/btnAccept"
+                app:layout_constraintStart_toEndOf="@id/btnAccept"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

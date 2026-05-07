@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.forgotpassword.VerifyOtpFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/back_btn_size"
+            android:layout_height="@dimen/back_btn_size"
+            android:backgroundTint="@color/back_btn"
+            android:layout_marginTop="@dimen/min_margin"
+            android:layout_marginStart="@dimen/min_margin"
+            app:icon="@drawable/ic_arrow_back"
+            app:iconSize="@dimen/back_btn_icon_size"
+            app:iconTint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtOtp"
+            android:layout_width="@dimen/nowidth"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/et_margin"
+            android:layout_marginTop="208dp"
+            android:layout_marginRight="@dimen/et_margin"
+            android:padding="@dimen/btn_padding"
+            android:text="@string/enter_otp"
+            android:textSize="@dimen/login_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.551"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:id="@+id/otpLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtOtp"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOtp1"
+                android:inputType="number"
+                android:maxLength="1"
+                android:gravity="center"
+                style="@style/OtpBoxStyle" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOtp2"
+                android:inputType="number"
+                android:maxLength="1"
+                android:gravity="center"
+                style="@style/OtpBoxStyle" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOtp3"
+                android:inputType="number"
+                android:maxLength="1"
+                android:gravity="center"
+                style="@style/OtpBoxStyle" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOtp4"
+                android:inputType="number"
+                android:maxLength="1"
+                android:gravity="center"
+                style="@style/OtpBoxStyle" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOtp5"
+                android:inputType="number"
+                android:maxLength="1"
+                android:gravity="center"
+                style="@style/OtpBoxStyle" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOtp6"
+                android:inputType="number"
+                android:maxLength="1"
+                android:gravity="center"
+                style="@style/OtpBoxStyle" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/verifyOtpBtn"
+            android:layout_width="@dimen/nowidth"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/et_margin"
+            android:layout_marginRight="@dimen/et_margin"
+            android:backgroundTint="@color/send_otp_btn"
+            android:elevation="@dimen/elevation"
+            android:padding="@dimen/btn_padding"
+            android:text="@string/verify_otp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_text_size"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/et_border_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.551"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otpLayout"
+            app:layout_constraintVertical_bias="0.094"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
