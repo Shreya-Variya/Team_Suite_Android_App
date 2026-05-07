@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.MainScreenFragment">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_bar_color"
+                app:title="Dashboard"
+                app:navigationIcon="@drawable/ic_drawer_icon"
+                app:menu="@menu/menu_top_app_bar"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="?attr/actionBarSize"
+                app:dividerColor="?attr/colorOutlineVariant"
+                app:dividerThickness="@dimen/divider_height"
+                android:elevation="@dimen/divider_height" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/top_bar_margin" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="@dimen/drawer_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:itemIconSize="@dimen/drawer_icon_size"
+            app:itemTextAppearance="@style/BigBoldTextInputLabel"
+            app:headerLayout="@layout/drawer_header"/>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</FrameLayout>
+
+<!--    app:menu="@menu/drawer_menu_admin"-->
+<!--    android:name="com.example.teamsuite.fragments.employee.EmployeeDashboardFragment"-->

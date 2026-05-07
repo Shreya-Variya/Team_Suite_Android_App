@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="@dimen/card_default_margin">-->
+
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:cardCornerRadius="@dimen/radius_emp_attendance"-->
+<!--        app:cardBackgroundColor="@color/card_default_color"-->
+<!--        android:foreground="?attr/selectableItemBackground"-->
+<!--        app:strokeWidth="1dp"-->
+<!--        app:strokeColor="@color/grey"-->
+<!--        tools:ignore="MissingConstraints">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="@dimen/emp_attendance_padding">-->
+
+<!--            &lt;!&ndash; EMPLOYEE NAME &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/txtEmpName"-->
+<!--                android:layout_width="@dimen/no_width"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/shreya_variya"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="@dimen/emp_attendance_name"-->
+<!--                android:textColor="@color/black"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toStartOf="@id/txtStatus"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            &lt;!&ndash; STATUS BADGE &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/txtStatus"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/present"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="@dimen/emp_attendance_status"-->
+<!--                android:paddingHorizontal="@dimen/horizontal_padding"-->
+<!--                android:paddingVertical="@dimen/vertical_padding"-->
+<!--                android:background="@drawable/bg_status_present"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            &lt;!&ndash; EMP ID &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/txtEmpId"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/demo_id"-->
+<!--                android:textSize="@dimen/emp_attendance_status"-->
+<!--                android:textColor="@color/grey"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/txtEmpName"-->
+<!--                android:layout_marginTop="@dimen/margin_top_emp_attendance" />-->
+
+<!--            &lt;!&ndash; DATE &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/txtDate"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/_17_apr_2026"-->
+<!--                android:textSize="@dimen/emp_attendance_status"-->
+<!--                android:textColor="@color/grey"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/txtEmpName"-->
+<!--                android:layout_marginTop="@dimen/margin_top_emp_attendance" />-->
+
+<!--            &lt;!&ndash; DIVIDER &ndash;&gt;-->
+<!--            <View-->
+<!--                android:id="@+id/divider"-->
+<!--                android:layout_width="@dimen/no_width"-->
+<!--                android:layout_height="@dimen/divider_height"-->
+<!--                android:background="@color/gray"-->
+<!--                android:layout_marginTop="@dimen/emp_attendance_divider_margin"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/txtEmpId"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--            &lt;!&ndash; WORK ICON &ndash;&gt;-->
+<!--            <ImageView-->
+<!--                android:id="@+id/imgWork"-->
+<!--                android:layout_width="@dimen/icon_img_size"-->
+<!--                android:layout_height="@dimen/icon_img_size"-->
+<!--                android:src="@drawable/ic_clock"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/divider"-->
+<!--                android:layout_marginTop="@dimen/img_margin"-->
+<!--                tools:ignore="ContentDescription" />-->
+
+<!--            &lt;!&ndash; WORK TIME &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/txtWorkTime"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/demo_work"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="@dimen/time_txt"-->
+<!--                app:layout_constraintStart_toEndOf="@id/imgWork"-->
+<!--                app:layout_constraintTop_toTopOf="@id/imgWork"-->
+<!--                android:layout_marginStart="@dimen/margin_vertical_emp_attendance" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtWorkLabel"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/work"-->
+<!--                android:textSize="@dimen/txt_time"-->
+<!--                android:textColor="@color/grey"-->
+<!--                app:layout_constraintStart_toStartOf="@id/txtWorkTime"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/txtWorkTime" />-->
+
+<!--            &lt;!&ndash; BREAK ICON &ndash;&gt;-->
+<!--            <ImageView-->
+<!--                android:id="@+id/imgBreak"-->
+<!--                android:layout_width="@dimen/icon_img_size"-->
+<!--                android:layout_height="@dimen/icon_img_size"-->
+<!--                android:src="@drawable/ic_local_cafe"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/divider"-->
+<!--                android:layout_marginTop="@dimen/img_margin"-->
+<!--                tools:ignore="ContentDescription" />-->
+
+<!--            &lt;!&ndash; BREAK TIME &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/txtBreakTime"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/demo_break"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="@dimen/time_txt"-->
+<!--                app:layout_constraintEnd_toStartOf="@id/imgBreak"-->
+<!--                app:layout_constraintTop_toTopOf="@id/imgBreak"-->
+<!--                android:layout_marginEnd="@dimen/margin_vertical_emp_attendance" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtBreakLabel"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/_break"-->
+<!--                android:textSize="@dimen/txt_time"-->
+<!--                android:textColor="@color/grey"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/txtBreakTime"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/txtBreakTime" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    </com.google.android.material.card.MaterialCardView>-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/attendance_item_padding">
+
+        <!-- EMP ID -->
+        <TextView
+            android:id="@+id/txtEmpId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/demo_id"
+            android:gravity="center"
+            android:minWidth="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- NAME -->
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shreya_variya"
+            android:gravity="center"
+            android:minWidth="120dp"
+            app:layout_constraintStart_toEndOf="@id/txtEmpId"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- DATE -->
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/demo_date"
+            android:gravity="center"
+            android:minWidth="100dp"
+            app:layout_constraintStart_toEndOf="@id/txtName"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- STATUS -->
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/present"
+            android:gravity="center"
+            android:minWidth="100dp"
+            app:layout_constraintStart_toEndOf="@id/txtDate"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- WORK -->
+        <TextView
+            android:id="@+id/txtWork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/demo_work"
+            android:gravity="center"
+            android:minWidth="100dp"
+            app:layout_constraintStart_toEndOf="@id/txtStatus"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- BREAK -->
+        <TextView
+            android:id="@+id/txtBreak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/demo_break"
+            android:gravity="center"
+            android:minWidth="100dp"
+            app:layout_constraintStart_toEndOf="@id/txtWork"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- DIVIDER -->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="@dimen/attendance_margin_top"
+            app:layout_constraintTop_toBottomOf="@id/txtEmpId"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</HorizontalScrollView>

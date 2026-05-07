@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/common_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardLeaveReport"
+        app:cardCornerRadius="@dimen/leave_card_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="@color/card_default_color"
+        app:strokeColor="@color/grey"
+        app:strokeWidth="1dp"
+        android:layout_width="@dimen/no_width"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/common_padding">
+
+            <TextView
+                android:id="@+id/txtLeavePolicyLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/leave_policy"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/card_title_small" />
+
+            <TextView
+                android:id="@+id/txtLeavePolicyName"
+                app:layout_constraintEnd_toStartOf="@id/statusChip"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtLeavePolicyLabel"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/demo_leave_policy"
+                android:textColor="@color/black"
+                android:textSize="@dimen/leave_card_title"
+                android:textStyle="bold" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/statusChip"
+                style="@style/Widget.Material3.Chip.Assist"
+                app:chipBackgroundColor="@color/green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/demo_leave_status"
+                android:textColor="@color/white" />
+
+            <View
+                android:id="@+id/divider1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtLeavePolicyName"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="@dimen/divider_height"
+                android:layout_marginTop="@dimen/common_margin"
+                android:background="@color/gray" />
+
+            <TextView
+                android:id="@+id/txtStartDateLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/start_date"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/card_title_small" />
+
+            <TextView
+                android:id="@+id/txtStartDate"
+                app:layout_constraintEnd_toStartOf="@id/guidelineMiddle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtStartDateLabel"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/demo_start_date"
+                android:textColor="@color/black"
+                android:textSize="@dimen/leave_date"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtEndDateLabel"
+                app:layout_constraintStart_toStartOf="@id/guidelineMiddle"
+                app:layout_constraintTop_toBottomOf="@id/divider1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/end_date"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/card_title_small" />
+
+            <TextView
+                android:id="@+id/txtEndDate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guidelineMiddle"
+                app:layout_constraintTop_toBottomOf="@id/txtEndDateLabel"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/demo_end_date"
+                android:textColor="@color/black"
+                android:textSize="@dimen/leave_date"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineMiddle"
+                app:layout_constraintGuide_percent="0.5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <View
+                android:id="@+id/divider2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtStartDate"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="@dimen/divider_height"
+                android:layout_marginTop="@dimen/common_margin"
+                android:background="@color/gray" />
+
+            <TextView
+                android:id="@+id/txtReasonLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/reason"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/card_title_small" />
+
+            <TextView
+                android:id="@+id/txtReason"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtReasonLabel"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/leave_card_top_margin"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/demo_reason"
+                android:textColor="@color/black"
+                android:textSize="@dimen/leave_date" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
